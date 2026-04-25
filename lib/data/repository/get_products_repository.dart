@@ -5,8 +5,10 @@ class GetProductsRepository {
   final GetProductsWebService getProductsWebService;
   GetProductsRepository({required this.getProductsWebService});
 
-  Future<List<Product>> getAllProducts() async {
-    final allProducts = await getProductsWebService.getAllProducts();
-    return allProducts.map((e) => Product.fromJson(e)).toList();
+  Future<List<Product>> getProductsByCategory(String category) async {
+    final allCategory = await getProductsWebService.getProductsByCategory(
+      category,
+    );
+    return allCategory.map((e) => Product.fromJson(e)).toList();
   }
 }

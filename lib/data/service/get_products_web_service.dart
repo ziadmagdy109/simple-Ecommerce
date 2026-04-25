@@ -7,14 +7,15 @@ class GetProductsWebService {
     BaseOptions options = BaseOptions(
       baseUrl: AppStrings.baseUrl,
       receiveDataWhenStatusError: true,
-      receiveTimeout: Duration(seconds: 60),
-      connectTimeout: Duration(seconds: 60),
+      receiveTimeout: Duration(seconds: 5),
+      connectTimeout: Duration(seconds: 5),
+      sendTimeout: Duration(seconds: 5),
     );
     dio = Dio(options);
   }
 
-  Future<List<dynamic>> getAllProducts() async {
-    final allProducts = await dio.get("products");
-    return allProducts.data["products"];
+  Future<List<dynamic>> getProductsByCategory(String category) async {
+    final allCategory = await dio.get("products/category/$category");
+    return allCategory.data["products"];
   }
 }

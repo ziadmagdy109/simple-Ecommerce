@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:simple_ecommerce/logic/products_provider.dart';
 
-class CattegoryItem extends StatelessWidget {
+class CattegoryItem extends ConsumerWidget {
   const CattegoryItem({super.key, required this.title});
   final String title;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Container(
       width: 70.w,
       margin: const EdgeInsets.symmetric(horizontal: 6),
@@ -14,24 +16,28 @@ class CattegoryItem extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         mainAxisSize: MainAxisSize.min,
         children: [
-          Container(
-            width: 70,
-            height: 70,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              color: Colors.grey.shade200,
-            ),
-            child: ClipOval(
-              child: Image.asset(
-                "assets/images/batman-silhouette-5120x2880-18270.jpg",
-                fit: BoxFit.cover,
+          GestureDetector(
+            onTap: () =>
+                ref.read(selectedCategoryProvider.notifier).state = title,
+            child: Container(
+              width: 70,
+              height: 70,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: Colors.grey.shade200,
+              ),
+              child: ClipOval(
+                child: Image.asset(
+                  "assets/images/batman-silhouette-5120x2880-18270.jpg",
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
           ),
           const SizedBox(height: 6),
           Text(
             title,
-            style: const TextStyle(fontSize: 12),
+            style: const TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
             overflow: TextOverflow.ellipsis,
             textAlign: TextAlign.center,
           ),

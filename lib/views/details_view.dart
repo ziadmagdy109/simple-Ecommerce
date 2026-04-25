@@ -20,7 +20,7 @@ class DetailsView extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10),
               child: Text(
-                "${product.description}",
+                product.description,
                 style: TextStyle(
                   color: AppColors.textSecondary,
                   fontSize: 14.sp,

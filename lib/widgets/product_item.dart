@@ -25,19 +25,24 @@ class ProductItem extends StatelessWidget {
           footer: Hero(
             tag: product.id,
             child: Container(
+              decoration: BoxDecoration(
+                color: AppColors.background,
+                borderRadius: BorderRadius.vertical(
+                  bottom: Radius.circular(16),
+                ),
+              ),
               width: double.infinity,
               padding: EdgeInsetsDirectional.symmetric(
                 horizontal: 15,
                 vertical: 10,
               ),
-              color: AppColors.background,
               alignment: Alignment.bottomCenter,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Flexible(
                     child: Text(
-                      "product.title",
+                      product.title,
                       style: TextStyle(
                         height: 1.3.h,
                         fontSize: 13.sp,
