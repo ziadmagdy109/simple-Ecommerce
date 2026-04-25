@@ -1,17 +1,25 @@
-# simple_ecommerce
+📁 Project Structure
+lib/
+│
+├── core/
+│   ├── constants/
+│   └── router/
+│
+├── data/
+│   ├── model/
+│   ├── repository/
+│   └── service/
+│
+├── logic/
+│   └── products_provider.dart
+│
+├── views/
+│   ├── home_view.dart
+│   └── details_view.dart
+│
+├── widgets/
+│
+├── main.dart
+└── my_app.dart
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<img width="578" height="998" alt="image" src="https://github.com/user-attachments/assets/2c8daf9c-bf5e-4f8e-85d7-85129e083676" />
