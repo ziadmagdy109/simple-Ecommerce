@@ -19,6 +19,12 @@ class HomeView extends ConsumerWidget {
         children: [
           SizedBox(height: 25.h),
           Flexible(child: BuildListCategories()),
+          Row(
+            children: [
+              SizedBox(width: 10.w),
+              Text('This is $category', style: TextStyle(fontSize: 20.sp)),
+            ],
+          ),
           Flexible(
             flex: 4,
             child: allProductsByCategory.when(
